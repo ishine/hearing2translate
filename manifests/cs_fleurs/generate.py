@@ -6,7 +6,6 @@ from pathlib import Path
 # since we need to import data_schema and currently we have a flat style python library, which
 # does not like doing submodules. This should probably be changed!!!
 import sys
-
 sys.path.insert(0,os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 from manifests.data_schema import InputJson, DatasetType
 
