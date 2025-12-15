@@ -58,6 +58,8 @@ Supported benchmarks by category:
 - **Emotion**: [`emotiontalk`](manifests/emotiontalk/README.md), [`mexpresso`](manifests/mexpresso/README.md)
 - **Long-Form**: [`acl6060-long`](manifests/acl6060-long/README.md), [`acl6060-short`](manifests/acl6060-short/README.md), [`mcif-long`](manifests/mcif-long/README.md), [`mandi`](manifests/mcif-short/README.md)
 
+After generating model outputs using the inference scripts (infer.py), you can run the full evaluation suite using the scripts in the `evaluation/` folder. For detailed installation instructions, environment variable setup, model downloads, and benchmark-specific commands, please refer to the dedicated [Evaluation README](evaluation/README.md).
+
 
 ## Contributing
 
