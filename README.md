@@ -3,10 +3,10 @@
 </p>
 
 <h2 align="center">
-  The Effectiveness of Speech Modality Integration into LLMs
+  Hearing to Translate: The Effectiveness of Speech Modality Integration into LLMs
 </h2>
 
-The **Hearing to Translate** test suite provides a unified evaluation framework for assessing how effectively SpeechLLMs, Speech Foundation Models (SFMs), and cascaded ASR→LLM pipelines handle speech-to-text translation across diverse real-world conditions. Covering 21 systems, 13 language pairs, 9 speech phenomena, and 16 benchmarks, the suite measures performance on clean speech as well as challenging scenarios involving gender bias, accents, code-switching, disfluencies, noise, named entities, emotion, and long-form content.
+The **Hearing-to-Translate** test suite provides a unified evaluation framework for assessing how effectively SpeechLLMs, Speech Foundation Models (SFMs), and cascaded ASR→LLM pipelines handle speech-to-text translation across diverse real-world conditions. Covering 21 systems, 13 language pairs, 9 speech phenomena, and 16 benchmarks, the suite measures performance on clean speech as well as challenging scenarios involving gender bias, accents, code-switching, disfluencies, noise, named entities, emotion, and long-form content.
 
 ---
 
@@ -37,6 +37,7 @@ git clone https://github.com/sarapapi/hearing2translate.git
 cd hearing2translate
 pip install -r requirements.txt
 ```
+Please not that the specific `transformers` version should be selected according to the supported version of the specific model (see Table 6 of the paper) you are interested in running.
 
 ## Usage
 
@@ -56,9 +57,10 @@ Supported benchmarks by category:
 - **Disfluencies**: [`libristutter`](manifests/libristutter/README.md)
 - **Noise**: [`noisy_fleurs_ambient`](manifests/noisy_fleurs_ambient/README.md), [`noisy_fleurs_babble`](manifests/noisy_fleurs_babble/README.md)
 - **Emotion**: [`emotiontalk`](manifests/emotiontalk/README.md), [`mexpresso`](manifests/mexpresso/README.md)
-- **Long-Form**: [`acl6060-long`](manifests/acl6060-long/README.md), [`acl6060-short`](manifests/acl6060-short/README.md), [`mcif-long`](manifests/mcif-long/README.md), [`mandi`](manifests/mcif-short/README.md)
+- **Long-Form**: [`acl6060-long`](manifests/acl6060-long/README.md), [`acl6060-short`](manifests/acl6060-short/README.md), [`mcif-long`](manifests/mcif-long/README.md), [`mcif-short`](manifests/mcif-short/README.md)
 
-After generating model outputs using the inference scripts (infer.py), you can run the full evaluation suite using the scripts in the `evaluation/` folder. For detailed installation instructions, environment variable setup, model downloads, and benchmark-specific commands, please refer to the dedicated [Evaluation README](evaluation/README.md).
+After generating model outputs using the inference scripts (infer.py), you can run the full evaluation suite using the scripts in the `evaluation/` folder. 
+For detailed installation instructions, environment variable setup, model downloads, and benchmark-specific commands, please refer to the dedicated [Evaluation README](evaluation/README.md).
 
 
 ## Contributing
@@ -67,7 +69,7 @@ If you want to add a model (`$MODEL_NAME`) to the repository, please create a PR
 - the inference code in `inference/{llm/sfm/speechllm}`
 - the outputs on all the applicable benchmarks of the test suite in `outputs/${MODEL_NAME}`
 
-Please refer to PR template for more information.
+Please refer to [PR template](pull_request_template.md) for more information.
 
 ## License
 
