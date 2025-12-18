@@ -1,18 +1,5 @@
 ## Installation
 
-### Requirements
-
-To run the evaluation scripts and download the models, ensure you have the following Python libraries installed.
-
-```bash
-pip install lingua-language-detector
-pip install unbabel-comet
-pip install sacrebleu
-pip install datasets
-pip install huggingface_hub
-pip install mweralign
-```
-
 ### Set environment variables
 
 Before running any scripts, you must configure the base path for the project and your Hugging Face cache settings.
