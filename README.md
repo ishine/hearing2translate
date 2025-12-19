@@ -11,7 +11,7 @@ The **Hearing-to-Translate** test suite provides a unified evaluation framework 
 ---
 
 ## 📰 News
-- Preprint released at: TO-DO
+- Dec. 19, 2025: [Preprint released on arXiv](https://arxiv.org/abs/2512.16378)
 
 ## Repository Structure
 ```
@@ -82,5 +82,13 @@ Human evaluation data in `evaluation_human/hearing2translate-v1` is released und
 ## Citation
 
 ```bibtex
-
+@misc{papi2025hearingtranslateeffectivenessspeech,
+      title={Hearing to Translate: The Effectiveness of Speech Modality Integration into LLMs}, 
+      author={Sara Papi and Javier Garcia Gilabert and Zachary Hopton and Vilém Zouhar and Carlos Escolano and Gerard I. Gállego and Jorge Iranzo-Sánchez and Ahrii Kim and Dominik Macháček and Patricia Schmidtova and Maike Züfle},
+      year={2025},
+      eprint={2512.16378},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2512.16378}, 
+}
 ```
