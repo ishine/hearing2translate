@@ -37,19 +37,16 @@ git clone https://github.com/sarapapi/hearing2translate.git
 cd hearing2translate
 pip install -r requirements.txt
 ```
-Please not that the specific `transformers` version should be selected according to the supported version of the specific model (see Table 6 of the paper) you are interested in running.
+**Note:** The required `transformers` version depends on the specific model being used. 
+Please ensure that you install the version compatible with the model you intend to run, as reported in [Table 6 of the paper](https://arxiv.org/abs/2512.16378).
 
 ## Usage
 
-Run inference using the provided script:
+### 1. Download benchmarks and set data directory
+Download the desired benchmarks by following the instructions provided in each benchmark-specific README, 
+and set `${H2T_DATADIR}` to the directory containing the corresponding audio files.
 
-```python
-python infer.py --model {MODEL_NAME} \
-  --in-modality {speech/text} \
-  --in-file ./manifests/{BENCHMARK_NAME}/{SRC_LANG}-{TGT-LANG}.jsonl --out-file {OUTPUT_PATH}
-```
-
-Supported benchmarks by category:
+**Supported benchmarks by category:**
 - **Generic**: [`fleurs`](manifests/fleurs/README.md), [`covost2`](manifests/covost2/README.md), [`europarl_st`](manifests/europarl_st/README.md), [`wmt`](manifests/wmt/README.md)
 - **Gender Bias**: [`winoST`](manifests/winoST/README.md)
 - **Accents**: [`commonAccent`](manifests/commonAccent/README.md), [`mandi`](manifests/mandi/README.md)
@@ -59,13 +56,27 @@ Supported benchmarks by category:
 - **Emotion**: [`emotiontalk`](manifests/emotiontalk/README.md), [`mexpresso`](manifests/mexpresso/README.md)
 - **Long-Form**: [`acl6060-long`](manifests/acl6060-long/README.md), [`acl6060-short`](manifests/acl6060-short/README.md), [`mcif-long`](manifests/mcif-long/README.md), [`mcif-short`](manifests/mcif-short/README.md)
 
-After generating model outputs using the inference scripts (infer.py), you can run the full evaluation suite using the scripts in the `evaluation/` folder. 
-For detailed installation instructions, environment variable setup, model downloads, and benchmark-specific commands, please refer to the dedicated [Evaluation README](evaluation/README.md).
+### 2. Run inference
 
+Run inference with the following command:
+  ```python
+  python infer.py \
+    --model ${MODEL_NAME} \
+    --in-modality {speech/text} \
+    --in-file ./manifests/${BENCHMARK_NAME}/${SRC_LANG}-${TGT-LANG}.jsonl \
+    --out-file ${OUTPUT_PATH}
+  ```
+The full list of supported models can be obtained with `python infer.py -h`.
+Supported benchmarks are listed above, while benchmark-specific language coverage is documented in the corresponding READMEs.
+
+### 3. Run evaluation
+
+After generating model outputs, run the evaluation suite using the scripts in the `evaluation/` directory.
+For environment setup, model downloads, and benchmark-specific evaluation commands, refer to the dedicated [Evaluation README](evaluation/README.md).
 
 ## Contributing
 
-If you want to add a model (`$MODEL_NAME`) to the repository, please create a PR with:
+If you want to add a model to the repository, please create a PR with:
 - the inference code in `inference/{llm/sfm/speechllm}`
 - the outputs on all the applicable benchmarks of the test suite in `outputs/${MODEL_NAME}`
 
