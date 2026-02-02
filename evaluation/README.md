@@ -1,5 +1,13 @@
 ## Installation
 
+### Prerequisites
+
+To ensure compatibility with the models and scripts in this repository, you must use a specific version of the transformers library:
+
+```bash
+pip install transformers==4.53.3
+```
+
 ### Set environment variables
 
 Before running any scripts, you must configure the base path for the project and your Hugging Face cache settings.
