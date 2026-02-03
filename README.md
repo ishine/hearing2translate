@@ -6,11 +6,18 @@
   Hearing to Translate: The Effectiveness of Speech Modality Integration into LLMs
 </h2>
 
-The **Hearing-to-Translate** test suite provides a unified evaluation framework for assessing how effectively SpeechLLMs, Speech Foundation Models (SFMs), and cascaded ASR→LLM pipelines handle speech-to-text translation across diverse real-world conditions. Covering 21 systems, 13 language pairs, 9 speech phenomena, and 16 benchmarks, the suite measures performance on clean speech as well as challenging scenarios involving gender bias, accents, code-switching, disfluencies, noise, named entities, emotion, and long-form content.
+The **Hearing-to-Translate** test suite provides a unified evaluation framework for 
+assessing how effectively SpeechLLMs, Speech Foundation Models (SFMs), and cascaded 
+ASR→LLM pipelines handle speech-to-text translation across diverse real-world conditions. 
+Covering 22 systems, 13 language pairs, 9 speech phenomena, and 16 benchmarks, the suite 
+measures performance on clean speech as well as challenging scenarios involving gender 
+bias, accents, code-switching, disfluencies, noise, named entities, emotion, and 
+long-form content.
 
 ---
 
 ## 📰 News
+- Jan. XX, 2026: added support for the Qwen3-Omni model and their outputs
 - Dec. 28, 2025: [Human Evaluation data released on 🤗HuggingFace](https://huggingface.co/datasets/zouharvi/hearing2translate-humeval)
 - Dec. 19, 2025: [Preprint released on arXiv](https://arxiv.org/abs/2512.16378)
 
